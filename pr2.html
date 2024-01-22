@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- head나 body내 어디든 가능, 웹페이지 내에 여러번 사용 가능    -->
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script 태그 </title>
+    
+    <script>
+        function over(obj) {
+        obj.src="./위시.png";
+        }
+        function out(obj) {
+        obj.src="./서울의 봄.png";
+        }
+        </script>
+        </head>
+        <body>
+        <h3>마우스 올려 보세요</h3>
+        <hr>
+        <img src="./서울의 봄.png" alt="이미지"
+        onmouseover="over(this)"
+        onmouseout="out(this)">
+        </body>
+        </html>
