@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>논리 연산</title></head>
+<body>
+<h3>논리 연산</h3>
+<hr>
+<script>
+let x=true, y=false;
+//let은 변수를 선언
+document.write("x=" + x + ", y=" + y + "<br><br>");
+//document.write 는 브라우저로 바로 보여주기
+//br은 줄 바꿈
+document.write("x && y : "+ (x&&y) +"<br>");
+// &&는 논리 and 연산 -> ab모두 true일 때 true 리턴
+document.write("x || y : "+ (x||y) +"<br>");
+//||는 논리 or 연산 -> ab 중 하나라도 true이면 true 리턴
+document.write("!x : " + (!x) +"<br>");
+//!a논리 not 연산 -> a가 true이면 false 값을, false이면 true 값 리턴
+document.write("<hr>");
+//hr은 수평선을 나타내는 태그이다. 
+document.write("(3>2) && (3<4) : " + ((3>2)&&(3<4)) + "<br>");
+document.write("(3==-2) || (-1<0) : " + ((3==2)||(-1<0)));
+</script>
+</body>
+</html>

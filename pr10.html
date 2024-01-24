@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>문자열 연산</title></head>
+<body>
+<h3>문자열 연산</h3>
+<!-- h3은 제목을 뜻한느 태그이다. -->
+문자열 연결은 +,+=로 한다.
+순서에 유의해야 한다.
+문자열 비교 연산자->!=, ==, >, <, <=, >= 가 있다.
+<hr>
+<!-- hr은 수평선을 나타내는 태그이다. -->
+<script>
+    //script는 JavaScript 코드를 포함하는 태그이다.
+document.write("abc" + 23 + "<br>");
+//document.write는 브라우저로 바로 보여준다.
+//br은 줄바꿈 태그이다.
+document.write(23 + "abc" + "<br>");
+document.write(23 + "35" + "<br>");
+//""사이에 있는 것은 문자열로 취급된다. 그래서 23과 35는 더해지지 않는다.
+document.write(23 + 35 + "<br>");
+document.write(23 + 35 + "abc" + "<br>");
+//숫자먼저 계산하여 58abc가 된다.
+document.write("abc" + 23 + 35 + "<br><hr>");
+let name = "kitae";
+//let은 변수를 선언하는 태그
+document.write(name == "kitae");
+// ==은 문자열 비교연산자이다 그래서 name과 kitae가 맞는지 비교 가능.
+document.write("<br>");
+document.write(name > "park");
+//문자열에서 비교는 사전순으로 비교되므로 false이다.
+</script>
+</body>
+</html>

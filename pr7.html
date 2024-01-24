@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- 20241.1.24 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식과 연산</title>
+    <script>
+        let x=3, y=3, z=3;
+        document.write("x=", + x + "y=" + y);
+        document.write(",z=" + z + "<br><br>"); 
+        // let은 변수를 선언할때 사용된다.
+        // document.write는 바로 브라우저 윈도우에 출력해준다.
+        // br은 줄을 바꿔준다.
+        x += 3; // x=x+3 -> x=6
+        y *= 3; // y=y*3 -> y=9
+        z %= 2; // z=z%2 -> z=1
+        document.write("x += 3; 실행 후, x=" + x + "<br>");
+        document.write("y *= 3; 실행 후, y=" + y + "<br>");
+        document.write("z %= 2; 실행 후, z=" + z);
+    </script>
+</head>
+<body>
+    <h3>식과 연산</h3>
+    상수 const: 항상 같은 수
+
+    const pi = 3.14569842;
+
+    pi=1; // 상수는 변경이 안되기 때문에 재할당시 오류
+    const a; 초깃값이 없으면 오류
+
+    산술연산자-> +더하기, -빼기, *곱하기, /나누기, %나머지 5개
+    
+</body>
+</html>
