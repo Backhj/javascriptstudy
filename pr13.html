@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>for 문</title>
+</head>
+<body>
+<h3>for 문으로 10px~35px 크기 출력</h3>
+<hr>
+<script>
+for(let size=10; size<=35; size+=5) { 
+    //let은 변수를 선언하게 해주는 요소
+    //size의 값은 10이고, size는 35보다 작거나 같을때 까지 반복하고,5씩 증가
+document.write("<span ");
+//document.write는 브라우저로 바로 출력해준다.
+//span은 특정 부분을 그룹화하거나 스타일을 적용하기 위해 사용되는 인라인(inline) 요소
+
+document.write("style='font-size:" + size + "px'>");
+document.write(size + "px");
+document.write("</span>");
+}
+</script>
+</body>
+</html>
