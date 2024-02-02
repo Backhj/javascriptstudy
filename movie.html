@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일별 박스오피스</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        let key = '7f7314005c9a1bb8ee535cedbd043a27';
+        let api_url = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json';
+
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                let st = $("#st").val().replaceAll('-', '');
+                console.log(st);
+                $.ajax({
+                    url: api_url,
+                    data: { key: key, targetDt: st },
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (res) {
+                        console.log(res);
+                        let arr = res['boxOfficeResult']['dailyBoxOfficeList'];
+
+                        // Clear previous table rows
+                        $("#tbl").empty();
+
+                        $.each(arr, function (i, v) {
+                            // Append a new row for each movie
+                            let row = "<tr>" +
+                                "<td>" + v['rank'] + "</td>" +
+                                "<td>" + v['movieNm'] + "</td>" +
+                                "<td>" + v['openDt'] + "</td>" +
+                                "<td>" + v['salesAmt'] + "</td>" +
+                                "<td>" + v['salesAcc'] + "</td>" +
+                                "<td>" + v['audiCnt'] + "</td>" +
+                                "<td>" + v['audiAcc'] + "</td>" +
+                                "<td>" + v['scrnCnt'] + "</td>" +
+                                "</tr>";
+                            $("#tbl").append(row);
+                        });
+                    }, error: function (e) {
+                        console.log(e);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="date" id="st">
+    <button id="btn">조회</button>
+    <table>
+        <thead>
+            <tr>
+                <th>순위</th>
+                <th>영화명</th>
+                <th>개봉일</th>
+                <th>매출액</th>
+                <th>누적 매출액</th>
+                <th>관객수</th>
+                <th>누적 관객수</th>
+                <th>당일스크린 수</th>
+            </tr>
+        </thead>
+        <tbody id="tbl">
+            <!-- Movie data will be displayed here -->
+        </tbody>
+    </table>
+</body>
+</html>
